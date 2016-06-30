@@ -8,7 +8,8 @@ var hid        = require("node-hid"),
 
 var hidDevice = function(opts) {
     opts = opts || {};
-    if (!opts.path && !(opts.vid && opts.pid))        { return new Error("no HID path or vid/pid specified"); }
+    if (!opts.path && !(opts.vid && opts.pid))
+        { return new Error("no HID path or vid/pid specified"); }
 
     if (!opts.parser) {
         opts.parser = hidParsers.raw;
